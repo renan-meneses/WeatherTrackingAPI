@@ -1,28 +1,52 @@
-# WeatherTrackingAPI
+# Weather Tracking API
 
 ## Descrição
 
-WeatherTrackingAPI é uma API desenvolvida em .NET Core para rastreamento de condições climáticas. Ela fornece atualizações sobre mudanças climáticas nas regiões dos usuários via notificações push e inclui um sistema de autenticação completo. A API também permite a simulação de mudanças climáticas para fins de teste.
+A Weather Tracking API é uma aplicação ASP.NET Core que fornece informações sobre mudanças climáticas em diferentes regiões. A API permite autenticação e cadastro de usuários, notificação de mudanças climáticas via push notifications, e inclui um sistema de alertas reforçados para condições climáticas severas.
 
 ## Tecnologias Utilizadas
 
-- **.NET Core**: Framework principal para desenvolvimento da API.
-- **Swagger**: Geração de documentação interativa para a API.
-- **JWT (JSON Web Token)**: Utilizado para autenticação de rotas.
-- **Hangfire**: Biblioteca para gerenciamento de tarefas em background (cron jobs).
-- **Entity Framework Core**: ORM para acesso a dados (opcional).
+- **.NET 8**
+- **Entity Framework Core**
+- **SQL Server**
+- **Hangfire** (para tarefas em background)
+- **Swagger** (para documentação da API)
+- **Autenticação JWT**
+- **Docker**
 
 ## Funcionalidades
 
-1. **Autenticação e Cadastro**: 
-   - Registro de novos usuários.
-   - Autenticação de usuários existentes e emissão de tokens JWT.
-
-2. **Tracking do Clima**:
-   - Envio de notificações push sobre mudanças climáticas.
-   - Reenvio de notificações em intervalos progressivamente menores até 10 tentativas, caso a notificação não seja visualizada.
-
-3. **Simulação de Mudanças Climáticas**:
-   - Endpoints para simular mudanças climáticas e enviar notificações para os usuários.
+- Autenticação e autorização com JWT
+- Cadastro de usuários
+- Notificações de mudanças climáticas
+- Sistema de alertas reforçados para mudanças climáticas severas
+- Simulação de mudanças climáticas via API
+- Tarefas em background usando Hangfire
+- Documentação da API com Swagger
 
 ## Estrutura do Projeto
+
+WeatherTrackingAPI/
+│
+├── Controllers/
+│ ├── AuthController.cs
+│ ├── WeatherController.cs
+│
+├── Data/
+│ ├── WeatherContext.cs
+│
+├── Models/
+│ ├── User.cs
+│ ├── WeatherChange.cs
+│
+├── Services/
+│ ├── WeatherNotificationService.cs
+│
+├── Middlewares/
+│ ├── CustomAuthenticationMiddleware.cs
+│
+├── Program.cs
+├── appsettings.json
+├── Dockerfile
+├── docker-compose.yml
+└── WeatherTrackingAPI.csproj
