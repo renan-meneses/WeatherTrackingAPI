@@ -25,7 +25,7 @@ A Weather Tracking API é uma aplicação ASP.NET Core que fornece informações
 - Documentação da API com Swagger
 
 ## Estrutura do Projeto
-
+```
 WeatherTrackingAPI/
 │
 ├── Controllers/
@@ -35,18 +35,34 @@ WeatherTrackingAPI/
 ├── Data/
 │ ├── WeatherContext.cs
 │
+├── Middlewares/
+│ ├── CustomAuthenticationMiddleware.cs
+│
 ├── Models/
 │ ├── User.cs
 │ ├── WeatherChange.cs
 │
+├── obj/
+│ ├── Debug /
+│ ├── project.assets.json
+│ ├── WeatherTrackingAPI.csproj.nuget.dgspec.json
+│
+├── Properties/
+│ ├── launchSettings.json
+│
 ├── Services/
 │ ├── WeatherNotificationService.cs
 │
-├── Middlewares/
-│ ├── CustomAuthenticationMiddleware.cs
-│
-├── Program.cs
+├── appsettings.Development.json
 ├── appsettings.json
-├── Dockerfile
 ├── docker-compose.yml
-└── WeatherTrackingAPI.csproj
+├── Dockerfile
+├── LICENSE
+├── Program.cs
+├── README.md
+├── WeatherTrackingAPI.csproj
+└── WeatherTrackingAPI.sln
+```
+
+
+## Deploy
